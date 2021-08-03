@@ -1,21 +1,15 @@
-const EMAIL = 'mccarronkevin@outlook.com'
-const PASSWORD = '8fTv3xbc%GC%91gH';
-
 const account = new MyQ();
+account.login('mccarronkevin@outlook.com ', '8fTv3xbc%GC%91gH')
+    .then(function(result) {
+        console.log(result);
+    }).catch(function(error) {
+        console.error(error);
+    });
 
-
-console.log('Logging in.');
-account
-    .login(EMAIL, PASSWORD)
-    .then((loginResult) => {
-        console.log('Login result:');
-        console.log(JSON.stringify(loginResult, null, 2));
-        console.log(`Short-lived security token: '${loginResult.securityToken}'`);
-
-        console.log(`\nGetting all devices on account`);
-        return account.getDevices();
-    })
-    .then((getDevicesResult) => {
+console.log(`\nGetting all devices on account`);
+return account.getDevices();
+})
+.then((getDevicesResult) => {
         console.log('getDevices result:');
         console.log(JSON.stringify(getDevicesResult, null, 2));
 
