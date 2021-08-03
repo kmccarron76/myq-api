@@ -3,8 +3,6 @@ const MyQ = require('myq-api');
 const EMAIL = 'mccarronkevin@outlook.com'
 const PASSWORD = '8fTv3xbc%GC%91gH';
 
-const account = new MyQ();
-
 
 console.log('Logging in.');
 account
